@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: pod
+metadata:
+  name: postgress-pod
+  labels:
+    name: postgres-pod
+    author: meg
+spec:
+  - containers:
+      name: postgress
+      image: postgress
+      env:
+        - name: POSTGRES_PASSWORD
+          value: meg
+        - name: POSTGRES_USER
+          value: myuser
+        - name: PSTGRESS_DB
+          value: mydb
+      ports:
+        - containerPort: 5432
+...
+
